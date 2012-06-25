@@ -244,7 +244,7 @@
 				});
 
 				$(url).change(function() {
-					if (!/^(http|https):\/\//.test(this.value)) {
+					if (!/^https?:\/\//.test(this.value)) {
 						this.value = "http://" + this.value;
 					}
 
