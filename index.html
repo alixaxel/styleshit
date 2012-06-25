@@ -41,7 +41,11 @@
 			-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 			-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
 			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+			width: 100%;
 			height: 80px;
+			position: fixed;
+			top: 0;
+			left: 0;
 		}
 
 		header h1 {
@@ -70,7 +74,6 @@
 			height: 37px;
 			display: block;
 			float: left;
-			line-height: 37px;
 		}
 
 		header input {
@@ -82,7 +85,7 @@
 			border: none;
 			display: block;
 			float: left;
-			outline: none;
+			line-height: 37px;
 			font-size: 16px;
 		}
 
@@ -101,6 +104,10 @@
 		header button:hover {
 			cursor: pointer;
 			color: #222;
+		}
+
+		#main {
+			margin-top: 120px;
 		}
 
 		.device {
