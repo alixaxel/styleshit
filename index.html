@@ -1,157 +1,26 @@
 <!DOCTYPE html>
-<html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
 <head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-	<title>styleshit</title>
-	<meta name="description" content="styleshit is a single html file to aid you in responsive web design (local and remote).">
+    <title>styleshit</title>
+    <meta name="description" content="styleshit is a single html file to aid you in responsive web design (local and remote)">
 
 	<!-- Mobile viewport optimized -->
-	<meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width">
 
-	<!-- styles -->
+	<!-- styles; concatenated and minified -->
 	<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Dosis">
-	<style>
-		* {
-			margin: 0;
-			padding: 0;
-		}
+    <link rel="stylesheet" href="assets/css/main.css">
+	<!-- end styles -->
 
-		body {
-			background-image:
-				-moz-linear-gradient(45deg, #C4C4C4 25%, transparent 25%),
-				-moz-linear-gradient(-45deg, #C4C4C4 25%, transparent 25%),
-				-moz-linear-gradient(45deg, transparent 75%, #C4C4C4 75%),
-				-moz-linear-gradient(-45deg, transparent 75%, #C4C4C4 75%);
-			background-image:
-				-webkit-gradient(linear, 0 100%, 100% 0, color-stop(.25, #C4C4C4), color-stop(.25, transparent)),
-				-webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, #C4C4C4), color-stop(.25, transparent)),
-				-webkit-gradient(linear, 0 100%, 100% 0, color-stop(.75, transparent), color-stop(.75, #C4C4C4)),
-				-webkit-gradient(linear, 0 0, 100% 100%, color-stop(.75, transparent), color-stop(.75, #C4C4C4));
-			-webkit-background-size: 20px 20px;
-			-moz-background-size: 20px 20px;
-			background-size: 20px 20px;
-			background-position:0 0, 10px 0, 10px -10px, 0px 10px;
-		}
-
-		header {
-			background-color: #F1F1F1;
-			border-bottom: 1px solid #D1D1D1;
-			-webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-			-moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-			box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-			width: 100%;
-			height: 80px;
-			position: fixed;
-			top: 0;
-			left: 0;
-		}
-
-		header h1 {
-			margin: 8px 20px 0;
-			letter-spacing: -4px;
-			font: 46px 'Dosis', sans-serif;
-			float: left;
-		}
-
-		header h1 a {
-			text-decoration: none;
-			color: #555;
-		}
-
-		header h1 a:hover {
-			text-decoration: underline;
-			color: #222;
-		}
-
-		header form {
-			background: #FFF;
-			border: 1px solid #CCC;
-			border-top-color: silver;
-			margin-top: 20px;
-			display: block;
-			height: 37px;
-			display: block;
-			float: left;
-		}
-
-		header input {
-			background: transparent;
-			border: 1px solid #000;
-			padding: 0 10px;
-			height: 37px;
-			width: 400px;
-			border: none;
-			display: block;
-			float: left;
-			line-height: 37px;
-			font-size: 16px;
-		}
-
-		header button {
-			background: transparent;
-			border: 0;
-			display: block;
-			width: 37px;
-			height: 37px;
-			float: right;
-			font-size: 24px;
-			font-weight: bold;
-			color: #999;
-		}
-
-		header button:hover {
-			cursor: pointer;
-			color: #222;
-		}
-
-		#main {
-			margin-top: 120px;
-		}
-
-		.device {
-			background: #333;
-			-webkit-border-radius: 8px;
-			-moz-border-radius: 8px;
-			border-radius: 8px;
-			-webkit-box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
-			-moz-box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
-			box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
-			margin: 32px auto;
-			padding: 0 16px 16px 16px;
-			max-width: 95%;
-		}
-
-		.device h3 {
-			margin: 0;
-			font: bold small/3.5em arial, sans-serif;
-			text-align: center;
-			color: #FFF;
-		}
-
-		.device span {
-			background-color: rgba(255, 255, 255, 0.1);
-			margin-bottom: 5px;
-			padding: 5px;
-			display: block;
-			font: 10px monospace, serif;
-			color: #FFF;
-		}
-
-		.device iframe {
-			background: #FFF;
-			border: none;
-			-webkit-box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-			-moz-box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-			box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-			width: 100%;
-		}
-
-		.device iframe::-webkit-scrollbar {
-			display: none;
-		}
-	</style>
+	<!-- All JavaScript at the bottom, except this Modernizr build. Modernizr
+	enables HTML5 elements & feature detects for optimal performance. -->
+    <script src="assets/js/vendor/modernizr-2.5.3.min.js"></script>
 </head>
 <body>
 
@@ -168,104 +37,15 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 	<script src="https://raw.github.com/carhartl/jquery-cookie/master/jquery.cookie.js"></script>
-	<script>
 
-		function getParameterByName(name)
-		{
-			name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-			var regexS = "[\\?&]" + name + "=([^&#]*)";
-			var regex = new RegExp(regexS);
-			var results = regex.exec(window.location.search);
-			if(results == null) {
-				return "";
-			} else {
-				return decodeURIComponent(results[1].replace(/\+/g, " "));
-			}
-		}
+	<!-- Grab Google CDN's jQuery, with a local fallback when offline -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-1.7.2.min.js"><\/script>')</script>
 
-		(function($) {
-			$(document).ready(function() {
-
-				var url = $('header form input');
-				var devices = {
-					'iPhone': [320, 480],
-					'iPhone (Landscape)': [480, 320],
-					'Facebook Page Tab': [520, 520],
-					'Kindle Fire': [600, 1024],
-					'iPad': [768, 1024],
-					'SVGA': [800, 600],
-					'Kindle Fire (Landscape)': [1024, 600],
-					'iPad (Landscape)': [1024, 768],
-					'HD 720p': [1280, 720],
-					'13" MacBook Air': [1440, 900],
-					'WSXGA+': [1680, 1050]
-				};
-				var codes = [
-					'@media only screen and (min-width : 321px) {}', // iPhone Portrait
-					'@media only screen and (max-width : 320px) {}', // iPhone Landscape
-					'@media only screen and (width : 520px) {}', // Facebook Page Tab
-					'@media only screen and (device-width : 600px) and (device-height : 1024px) {}', // Kindle Fire Portrait
-					'@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}', // iPad Portrait
-					'@media only screen and (min-width : 800px) {}', // SVGA
-					'@media only screen and (device-width : 1024px) and (device-height : 600px) {}', // Kindle Fire Landscape
-					'@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}', // iPad Landscape
-					'@media only screen and () {}', // HD 720p
-					'@media only screen and () {}', // 13" MacBook Air
-					'@media only screen and () {}', // WSXGA+
-				];
-
-				$('header form').submit(function(e) {
-
-					e.preventDefault();
-					$('#main').empty();
-
-					$.each(devices, function(device, viewport) {
-						var frame = $('<div class="device"></div>').attr({
-							'style': [
-								'width: ' + viewport[0] + 'px;'
-							].join(' ')
-						}).append(
-							$('<h3></h3>').text(device + ' (' + viewport[0] + 'x' + viewport[1] + ')')
-						).append(
-							$('<span>' + codes.shift() + '</span>')
-						).append(
-							$('<iframe></iframe>').attr({
-								'sandbox': 'allow-forms allow-same-origin allow-scripts allow-top-navigation',
-								'src': $(url).val(),
-								'style': [
-									'height: ' + viewport[1] + 'px;'
-								].join(' ')
-							})
-						);
-
-						$('#main').append(frame);
-						$('iframe:last').load(function () {});
-					});
-				});
-
-				$(url).change(function() {
-					if (!/^https?:\/\//.test(this.value)) {
-						this.value = "http://" + this.value;
-					}
-
-					window.location.search = "url=" + this.value;
-				});
-
-				var value = getParameterByName('url');
-
-				if(value != '') {
-					if (!/^(http|https):\/\//.test(value)) {
-						value = "http://" + value;
-					}
-
-					$(url).val(value);
-					$('header form').submit();
-				}
-
-			});
-		})(jQuery);
-
-	</script>
+    <!-- scripts; concatenated and minified -->
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- end scripts -->
 
 </body>
 </html>
