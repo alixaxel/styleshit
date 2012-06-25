@@ -29,17 +29,17 @@ function getParameterByName(name)
 			'WSXGA+': [1680, 1050]
 		};
 		var codes = [
-			'@media only screen and (min-width : 321px) {}', // iPhone Portrait
-			'@media only screen and (max-width : 320px) {}', // iPhone Landscape
+			'@media only screen and (max-device-width : 320px) and (orientation : portrait) {}', // iPhone Portrait
+			'@media only screen and (min-device-width : 321px) and (max-device-width : 480px) and (orientation : landscape) {}', // iPhone Landscape
 			'@media only screen and (width : 520px) {}', // Facebook Page Tab
-			'@media only screen and (device-width : 600px) and (device-height : 1024px) {}', // Kindle Fire Portrait
+			'@media only screen and (device-width : 600px) and (device-height : 1024px) and (orientation : portrait) {}', // Kindle Fire Portrait
 			'@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {}', // iPad Portrait
-			'@media only screen and (min-width : 800px) {}', // SVGA
-			'@media only screen and (device-width : 1024px) and (device-height : 600px) {}', // Kindle Fire Landscape
+			'@media only screen and (max-width : 800px) {}', // SVGA
+			'@media only screen and (device-width : 1024px) and (device-height : 600px) and (orientation : landscape) {}', // Kindle Fire Landscape
 			'@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {}', // iPad Landscape
-			'@media only screen and () {}', // HD 720p
-			'@media only screen and () {}', // 13" MacBook Air
-			'@media only screen and () {}', // WSXGA+
+			'@media only screen and (max-width : 1280px) {}', // HD 720p
+			'@media only screen and (max-width : 1440px) {}', // 13" MacBook Air
+			'@media only screen and (max-width : 1680px) {}', // WSXGA+
 		];
 
 		$('header form').submit(function(e) {
