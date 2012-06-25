@@ -170,6 +170,19 @@
 	<script src="https://raw.github.com/carhartl/jquery-cookie/master/jquery.cookie.js"></script>
 	<script>
 
+		function getParameterByName(name)
+		{
+			name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
+			var regexS = "[\\?&]" + name + "=([^&#]*)";
+			var regex = new RegExp(regexS);
+			var results = regex.exec(window.location.search);
+			if(results == null) {
+				return "";
+			} else {
+				return decodeURIComponent(results[1].replace(/\+/g, " "));
+			}
+		}
+
 		(function($) {
 			$(document).ready(function() {
 
@@ -201,21 +214,10 @@
 					'@media only screen and () {}', // WSXGA+
 				];
 
-				if($.cookie('lastUrl')) {
-					$(url).val($.cookie('lastUrl'));
-				}
-
-				$(url).change(function() {
-					if (!/^https?:\/\//.test(this.value)) {
-						this.value = "http://" + this.value;
-					}
-				});
-
 				$('header form').submit(function(e) {
 
 					e.preventDefault();
 					$('#main').empty();
-					$.cookie('lastUrl', $(url).val());
 
 					$.each(devices, function(device, viewport) {
 						var frame = $('<div class="device"></div>').attr({
@@ -240,6 +242,25 @@
 						$('iframe:last').load(function () {});
 					});
 				});
+
+				$(url).change(function() {
+					if (!/^(http|https):\/\//.test(this.value)) {
+						this.value = "http://" + this.value;
+					}
+
+					window.location.search = "url=" + this.value;
+				});
+
+				var value = getParameterByName('url');
+
+				if(value != '') {
+					if (!/^(http|https):\/\//.test(value)) {
+						value = "http://" + value;
+					}
+
+					$(url).val(value);
+					$('header form').submit();
+				}
 
 			});
 		})(jQuery);
